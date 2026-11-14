@@ -1,0 +1,11 @@
+# .github/metadata.yaml
+description: "Swift implementation of RFC 2104: HMAC: Keyed-Hashing for Message Authentication."
+topics:
+  - standards
+  - rfc
+  - rfc-2104
+  - hmac
+  - cryptography
+homepage: "https://swift-institute.org"
+readme:
+  family: E
