@@ -12,7 +12,7 @@ let package = Package(
         .visionOS(.v27),
     ],
     products: [
-        .library(name: "RFC 2104", targets: ["RFC 2104"]),
+        .library(name: "RFC 2104", targets: ["RFC 2104"])
     ],
     dependencies: [
         .package(
@@ -35,7 +35,7 @@ let package = Package(
         .testTarget(
             name: "RFC 2104 Tests",
             dependencies: [
-                .target(name: "RFC 2104"),
+                .target(name: "RFC 2104")
             ]
         ),
     ],
