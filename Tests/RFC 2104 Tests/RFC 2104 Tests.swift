@@ -6,7 +6,7 @@ struct `RFC 2104 Tests` {
 
     @Test
     func `RFC 2202 HMAC-SHA-1 test cases`() {
-        let hmac = RFC_2104.HMAC(.sha1)
+        let hmac = IETF.RFC.`2104`.HMAC(.sha1)
         #expect(hmac.code(for: Array("Hi There".utf8), key: [UInt8](repeating: 0x0b, count: 20)) == hex("b617318655057264e28bc0b6fb378c8ef146be00"))
         #expect(hmac.code(for: Array("what do ya want for nothing?".utf8), key: Array("Jefe".utf8)) == hex("effcdf6ae5eb2fa2d27416d5f184df9c259a7c79"))
         #expect(hmac.code(for: [UInt8](repeating: 0xdd, count: 50), key: [UInt8](repeating: 0xaa, count: 20)) == hex("125d7342b9ac11cd91a39af48aa17b4f63f175d3"))
@@ -21,7 +21,7 @@ struct `RFC 2104 Tests` {
 
     @Test
     func `RFC 4231 HMAC-SHA-256 test cases`() {
-        let hmac = RFC_2104.HMAC(.sha256)
+        let hmac = IETF.RFC.`2104`.HMAC(.sha256)
         #expect(hmac.code(for: Array("Hi There".utf8), key: [UInt8](repeating: 0x0b, count: 20)) == hex("b0344c61d8db38535ca8afceaf0bf12b881dc200c9833da726e9376c2e32cff7"))
         #expect(hmac.code(for: Array("what do ya want for nothing?".utf8), key: Array("Jefe".utf8)) == hex("5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843"))
         #expect(hmac.code(for: [UInt8](repeating: 0xdd, count: 50), key: [UInt8](repeating: 0xaa, count: 20)) == hex("773ea91e36800e46854db8ebd09181a72959098b3ef8c122d9635514ced565fe"))
@@ -45,7 +45,7 @@ struct `RFC 2104 Tests` {
 
     @Test
     func `RFC 4231 HMAC-SHA-384 test cases`() {
-        let hmac = RFC_2104.HMAC(.sha384)
+        let hmac = IETF.RFC.`2104`.HMAC(.sha384)
         #expect(
             hmac.code(for: Array("Hi There".utf8), key: [UInt8](repeating: 0x0b, count: 20)) == hex("afd03944d84895626b0825f4ab46907f15f9dadbe4101ec682aa034c7cebc59cfaea9ea9076ede7f4af152e8b2fa9cb6")
         )
@@ -77,7 +77,7 @@ struct `RFC 2104 Tests` {
 
     @Test
     func `RFC 4231 HMAC-SHA-512 test cases`() {
-        let hmac = RFC_2104.HMAC(.sha512)
+        let hmac = IETF.RFC.`2104`.HMAC(.sha512)
         #expect(
             hmac.code(for: Array("Hi There".utf8), key: [UInt8](repeating: 0x0b, count: 20))
                 == hex("87aa7cdea5ef619d4ff0b4241a1d6cb02379f4e2ce4ec2787ad0b30545e17cdedaa833b7d6b8a702038b274eaea3f4e4be9d914eeb61f1702e696c203a126854")
@@ -110,7 +110,7 @@ struct `RFC 2104 Tests` {
 
     @Test
     func `verify accepts the code and a truncation of at least half its length`() {
-        let hmac = RFC_2104.HMAC(.sha256)
+        let hmac = IETF.RFC.`2104`.HMAC(.sha256)
         let key = Array("key".utf8)
         let message = Array("message".utf8)
         let code = hmac.code(for: message, key: key)
@@ -122,7 +122,7 @@ struct `RFC 2104 Tests` {
 
     @Test
     func `verify refuses a code that differs in any byte`() {
-        let hmac = RFC_2104.HMAC(.sha1)
+        let hmac = IETF.RFC.`2104`.HMAC(.sha1)
         let key = Array("Jefe".utf8)
         let message = Array("what do ya want for nothing?".utf8)
         let code = hmac.code(for: message, key: key)

@@ -15,6 +15,7 @@ let package = Package(
         .library(name: "RFC 2104", targets: ["RFC 2104"])
     ],
     dependencies: [
+        .package(url: "https://github.com/swift-ietf/swift-rfc.git", branch: "main"),
         .package(
             url: "https://github.com/swift-standards/swift-fips-180-4.git",
             branch: "main"
@@ -28,6 +29,7 @@ let package = Package(
         .target(
             name: "RFC 2104",
             dependencies: [
+                .product(name: "IETF RFC", package: "swift-rfc"),
                 .product(name: "FIPS 180-4", package: "swift-fips-180-4"),
                 .product(name: "Byte", package: "swift-byte"),
             ]

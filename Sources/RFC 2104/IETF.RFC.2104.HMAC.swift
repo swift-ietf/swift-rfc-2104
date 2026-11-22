@@ -1,4 +1,4 @@
-extension RFC_2104 {
+extension IETF.RFC.`2104` {
 
     /// HMAC over one hash function (RFC 2104, section 2):
     /// `H(K XOR opad, H(K XOR ipad, text))`.
@@ -13,7 +13,7 @@ extension RFC_2104 {
     }
 }
 
-extension RFC_2104.HMAC {
+extension IETF.RFC.`2104`.HMAC {
 
     /// The authentication code of `message` under `key`, `hash.outputLength` bytes long.
     ///

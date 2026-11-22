@@ -1,4 +1,4 @@
-extension RFC_2104 {
+extension IETF.RFC.`2104` {
 
     /// The iterated hash function `H` that HMAC is built on (RFC 2104, section 2): its input block length `B` and
     /// output length `L` in bytes, and the function itself.
